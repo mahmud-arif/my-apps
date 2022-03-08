@@ -1,0 +1,12 @@
+[Unit]
+Description=docker boot
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/ubuntu/my-apps
+ExecStart=/usr/bin/docker-compose -f /home/ubuntu/my-apps/docker-compose.yml up -d --remove-orphans
+
+[Install]
+WantedBy=multi-user.target
