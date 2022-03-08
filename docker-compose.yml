@@ -1,9 +1,7 @@
 version: '3'
 services:
   nginx:
-    image: nginx:latest
-    volumes:
-      - ./default.conf:/etc/nginx/conf.d/default.conf
+    build: .
     ports:
       - 8080:80
     restart: always
@@ -16,4 +14,4 @@ services:
     command: >
       sh -c "cd my-project && yarn && yarn run build && yarn run start"
     restart: always
-    
+
