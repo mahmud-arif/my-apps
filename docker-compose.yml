@@ -11,5 +11,8 @@ services:
       - frontend
   frontend: 
     image: "mahmudarif/welcome-app:latest"
+
+    command: >
+      sh -c "yarn run build && yarn run start"
     restart: always
 
