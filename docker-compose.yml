@@ -11,6 +11,8 @@ services:
       - frontend
   frontend: 
     image: "mahmudarif/welcome-app:latest"
+    ports:
+      - 3000:3000
     command: >
       sh -c "cd my-project && yarn && yarn run build && yarn run start"
     restart: always
